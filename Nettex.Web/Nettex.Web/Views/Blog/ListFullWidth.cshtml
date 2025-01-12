@@ -1,0 +1,25 @@
+﻿
+@(Html.Nettex().Page()
+    .Title("Blog | List Full Width")
+    .Footer()
+    .Header(settings => {
+        settings.Nav(DemoMenu.GetDemoMenu());
+        settings.ShowTopbar(true); 
+    }))
+
+
+@Html.Nettex().Section().ContentTemplate(@<text>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+
+                @Html.Nettex().BlogPosts(BlogPostViewName.ListBottomText).Pageable(3)
+
+            </div>
+        </div>
+    </div>
+
+</text>).Size(SectionSize.Small)
+
+
